@@ -2,13 +2,11 @@ package com.miyushan;
 
 public class Miyushan {
 
-    public static void main(String[] args) {
-        System.out.println("Hii from Miyushan");
-        shakeer();
+    public static void sayName(){
+        System.out.println("Miyushan");
     }
-
-    private static void shakeer(){
-        System.out.println("Hii from Shakeer");
+    public static void sayAge(){
+        System.out.println("22");
     }
 }
 
