@@ -3,9 +3,12 @@ package com.NesoAcademy;
 public class Main {
 
     public static void main(String[] args) {
-        final String COMPANY_NAME = "Neso Accademy";
-        //can't assign a new value to a constant
-//        COMPANY_NAME = "Another company";
-        System.out.println(COMPANY_NAME);
+
+        //short
+        System.out.println(Short.MAX_VALUE+" "+Short.MIN_VALUE);
+
+        // Integer
+        System.out.println(Integer.MAX_VALUE+" "+Integer.MIN_VALUE);
+        
     }
 }
