@@ -9,6 +9,5 @@ public class Main {
 
         // Integer
         System.out.println(Integer.MAX_VALUE+" "+Integer.MIN_VALUE);
-        
     }
 }
