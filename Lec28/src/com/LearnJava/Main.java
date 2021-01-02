@@ -4,23 +4,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        boolean b1 = true;
-        boolean b2 = false;
-        boolean b3 = 2 < 3;     //less than operator
-        boolean b4 = 2 > 3;     //greater than operator
+        //String data type is a class
+        
+        //convert a normal text into uppercase and print it
+        String text = "Welcome Java";
+        System.out.println(text.toUpperCase());
 
-        System.out.println(b1); //true
-        System.out.println(b2); //false
-        System.out.println(b3); //true
-        System.out.println(b4); //false
-
-        System.out.println();   //leave space
-
-        boolean isAlive = true;
-        if(isAlive)
-            System.out.println("alive");    //print alive
-        else
-            System.out.println("not alive");
+        //convert a normal text into uppercase by using a new variable
+        String text2 = "Welcome Java";
+        String upperCaseText = text2.toUpperCase();
+        System.out.println(upperCaseText);
 
     }
 }
