@@ -3,16 +3,24 @@ package com.LearnJava;
 public class Main {
 
     public static void main(String[] args) {
-        char c1 = 'A';      //A
-        char c2 = 65;       //A     //as an integer value
-        char c3 = '\u0041'; //A     //as an unicode
-        System.out.println(c1);
-        System.out.println(c2);
-        System.out.println(c3);
 
-        int i1 = 'A';       //65;
-        int i2 = '\u0041';  //65
-        System.out.println(i1);
-        System.out.println(i2);
+        boolean b1 = true;
+        boolean b2 = false;
+        boolean b3 = 2 < 3;     //less than operator
+        boolean b4 = 2 > 3;     //greater than operator
+
+        System.out.println(b1); //true
+        System.out.println(b2); //false
+        System.out.println(b3); //true
+        System.out.println(b4); //false
+
+        System.out.println();   //leave space
+
+        boolean isAlive = true;
+        if(isAlive)
+            System.out.println("alive");    //print alive
+        else
+            System.out.println("not alive");
+
     }
 }
