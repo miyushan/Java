@@ -2,50 +2,58 @@ package practice;
 
 import java.util.*;
 
+/**
+ *Author: 2018/E/102
+ *This program is used to sort given strings by length and alphabetical order
+ */
+
 public class SortStrings {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
 
-        int id = 1;
+        Scanner input = new Scanner(System.in); //Scanner class to get inputs
+        List<String> names = new ArrayList<>(); //declare an Arraylist to store inputs as an array
+
+        int length;
         String temp;
-        List<String> names = new ArrayList<>();
 
-        System.out.print("Enter your string here");
-        System.out.println("(Press 'o' if you want to end entering) :\t");
+        System.out.print("\nHow many strings do you want to sort:\t");
+        length = input.nextInt();   //number of strings want to sort
+
+        System.out.println("\nEnter your strings here");
 
         //giving inputs as user input
-        do {
-            System.out.print("Name " + id + " :\t");
-            temp = input.nextLine();
+        for (int i = 0; i <length ; i++) {
 
-            names.add(temp);
-            id++;
-        } while (temp != "o");
+            System.out.print("Name " + (i+1) + " :\t");
+            temp = input.next();    //get input strings
+            names.add(temp);        //store data to arraylist
 
+        }
 
-        //giving inputs manually
-        names.add("Shakeer");
-        names.add("Nirosha");
-        names.add("Arun");
-        names.add("Aakila");
-        names.add("Miyushan");
-        names.add("Rodrigo");
-
-        System.out.println("Unsorted array:");
-        print(names);
+        System.out.println("\nUnsorted array:");
+        print(names);   //print initial array
         System.out.println("\nSorted array:");
-        sort(names);
+        sort(names);    //print sorted array
     }
 
+    /**
+     * This method is used to sort ArrayList by length and alphabetical order
+     * @param arr
+     */
     static void sort(List<String> arr){
         Collections.sort(arr);  //sort by first character of the name
         Collections.sort(arr,Comparator.comparing(String::length));     //sort by length of the name
         print(arr);
     }
 
+    /**
+     *This method is used to print elements of ArrayList
+     * @param arr
+     */
     static void print(List<String> arr){
         for (Object name : arr) {
             System.out.println(name);
         }
     }
+
 }

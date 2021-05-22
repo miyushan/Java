@@ -11,46 +11,55 @@ import java.util.Map;
 public class SwapKeys {
     public static void main(String[] args) {
 
-        Map<String,String> names = new HashMap<>();
-        names.put("shakeer","miyushan");
-        names.put("nadeesha","madhuranga");
-        names.put("dineth","damsara");
-        names.put("isuru","isuru");
+        Map<String,String> firstMap = new HashMap<>(); //declare a map
+        //add elements to the map
+        firstMap.put("shakeer","miyushan");
+        firstMap.put("nadeesha","madhuranga");
+        firstMap.put("dineth","damsara");
+        firstMap.put("isuru","isuru");
 
         System.out.println("\tBefore swap:");
-        print(names);
+        print(firstMap);   //print initial map
 
-        swap(names);
+        swap(firstMap);     //call to swap
+
     }
 
 
+    /**
+     * This method is used to swap key and values in each elements of the initial map
+     * @param secondMap
+     */
+    public static void swap(Map<String,String> secondMap){
+        Map<String,String> newMap = new HashMap<>();       //new Map for changed Map
+
+        System.out.println("\n\tAfter swap:");
+        secondMap.forEach((key, value) -> {     //arrowfunction to check each element's value and key
+            if(key.equals(value)){
+                try{
+                    throw new Exception("Duplicated key and Values");
+                }
+                catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+            else {
+                newMap.put(value,key);  //store swapped data into new map
+            }
+        });
+        print(newMap);  //print new map
+
+    }
+
+
+    /**
+     * This method is used to print map elements
+     * @param names
+     */
     static void print(Map<String,String> names){
         for (Map.Entry pairEntry: names.entrySet()){
             System.out.println(pairEntry.getKey()+" : "+pairEntry.getValue());
         }
-    }
-
-
-    static void swap(Map<String,String> names){
-        Map<String,String> newMap = new HashMap<>();       //new Map function
-
-        System.out.println("\n\tAfter swap:");
-        for(Map.Entry<String,String> e: names.entrySet()){
-
-            if(!e.getKey().equals(e.getValue())){   //check weather any key match to its value
-                //swap key and value properties
-                String Key = e.getKey();
-                String Value = e.getValue();
-                newMap.put(Value, Key);
-            }
-            else{
-                System.out.println("Enter valid inputs!!!");
-                break;
-            }
-
-        }
-
-        print(newMap);
     }
 
 }
